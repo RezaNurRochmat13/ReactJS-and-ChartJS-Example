@@ -1,24 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Bar} from 'react-chartjs-2';
 
 function App() {
+  const fruitsData = {
+    labels: ['Day One', 'Day Two', 'Day Three'],
+    datasets: [
+      {
+        label: 'Apple',
+        data: [65, 33, 35],
+        backgroundColor: '#112233'
+      },
+      {
+        label: 'Mangos',
+        data: [28, 29, 30],
+        backgroundColor: '#78C1FF'
+      },
+      {
+        label: 'Jackfruit',
+        data: [30, 31, 32],
+        backgroundColor: '#ff78c1'
+      },
+    ]
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>Loha</p>
+      <Bar
+      data={fruitsData}
+      title="My Charts"
+      color="#70CAD1" />
     </div>
   );
 }
